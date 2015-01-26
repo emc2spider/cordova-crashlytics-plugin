@@ -2,6 +2,7 @@ package org.apache.cordova.crashlytics;
 
 import android.content.Context;
 import com.crashlytics.android.Crashlytics;
+import io.fabric.sdk.android.Fabric;
 import org.apache.cordova.*;
 import org.json.JSONException;
 
@@ -13,6 +14,7 @@ public class CrashlyticsPlugin extends CordovaPlugin {
     public void initialize(CordovaInterface cordova, CordovaWebView webView) {
         super.initialize(cordova, webView);
         Crashlytics.start((Context) cordova.getActivity());
+        Fabric.with(this, new Crashlytics());
     }
 
     private static enum BridgedMethods {
