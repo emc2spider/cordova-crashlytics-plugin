@@ -42,6 +42,10 @@
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.INTERNET" />
         </config-file>
+        
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
++            <meta-data android:name="com.crashlytics.ApiKey" android:value="ca92bffcf55bd68a1010d441700e66a114027f48" />
++        </config-file>
 
         <source-file src="src/android/org/apache/cordova/crashlytics/CrashlyticsPlugin.java" target-dir="src/org/apache/cordova/crashlytics" />
         <source-file src="libs/android/crashlytics.jar" target-dir="libs" />
